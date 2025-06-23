@@ -51,6 +51,16 @@ limitPerTick: 5
 compileOnly 'bot.colla:donation-api:2.0.1'
 ```
 
+> [!TIP]  
+> Capability 충돌이 발생할 경우, 다음과 같이 해결 전략을 지정하여야 할 수도 있습니다.
+> ```groovy
+> configurations.configureEach {
+>     resolutionStrategy.capabilitiesResolution.withCapability("org.spigotmc:spigot-api") {
+>         selectHighestVersion()
+>     }
+> }
+> ```
+
 #### 사용법
 
 ```java
