@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"bot.colla.donation.event","l":"DonationEvent"},{"p":"bot.colla.donation.event","l":"DonationEvent.Platform"},{"p":"bot.colla.donation.event","l":"DonationEvent.Type"}];updateSearchResults();

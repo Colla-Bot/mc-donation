@@ -1,0 +1,13 @@
+This project contains references to the Bukkit API, which is licensed under the
+GNU General Public License (GPL). These references are included solely for
+compatibility purposes. It is our good-faith belief that such usage qualifies
+as fair use, as defined under applicable copyright law.
+
+This project does not include or distribute the source code of the Bukkit API,
+nor does it incorporate any part of the original implementation. All references
+to the Bukkit API are strictly limited to publicly available interfaces, as
+necessary for interoperability and plugin development.
+
+This project is not affiliated with, endorsed by, or sponsored by Bukkit,
+Mojang, Microsoft, SOOP, or CHZZK. All trademarks and copyrights are the
+property of their respective owners.
