@@ -35,7 +35,7 @@ limitPerTick: 5
 
 ### API
 
-[![Maven Central Version](https://img.shields.io/maven-central/v/bot.colla/donation-api)](https://central.sonatype.com/artifact/bot.colla/donation-api) [![Javadoc Status](https://img.shields.io/github/actions/workflow/status/Colla-Bot/mc-donation/pages/pages-build-deployment?label=Javadoc)](https://colla-bot.github.io/mc-donation/)
+[![Maven Central Version](https://img.shields.io/maven-central/v/bot.colla/donation-api)](https://central.sonatype.com/artifact/bot.colla/donation-api) [![GitHub Release](https://img.shields.io/github/v/release/Colla-Bot/mc-donation)](https://github.com/Colla-Bot/mc-donation/releases/latest) [![Javadoc Status](https://img.shields.io/github/actions/workflow/status/Colla-Bot/mc-donation/pages/pages-build-deployment?label=Javadoc)](https://colla-bot.github.io/mc-donation/)
 
 #### 의존성
 
