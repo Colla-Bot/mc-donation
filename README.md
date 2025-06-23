@@ -35,10 +35,9 @@ limitPerTick: 5
 
 ### API
 
-#### 의존성
-
 [![Maven Central Version](https://img.shields.io/maven-central/v/bot.colla/donation-api)](https://central.sonatype.com/artifact/bot.colla/donation-api) [![Javadoc Status](https://img.shields.io/github/actions/workflow/status/Colla-Bot/mc-donation/pages/pages-build-deployment?label=Javadoc)](https://colla-bot.github.io/mc-donation/)
 
+#### 의존성
 
 ```xml
 <dependency>
@@ -93,8 +92,8 @@ public class DonationListener implements Listener {
 ## 사용법
 
 - `/[숲/치지직] [로그인/로그아웃/시작/중지]`: 후원 연동 로그인, 로그아웃, 시작, 중지
-- `/donation reload`: 플러그인 설정 리로드 (OP 또는 `donation.donation` 권한 필요)
 - `/[숲/치지직] 테스트 [유형] [닉네임] [액수]`: 테스트 이벤트 전송 (OP 권한 필요)
+- `/donation reload`: 플러그인 설정 리로드 (OP 또는 `donation.donation` 권한 필요)
 
 > [!TIP]  
 > - SOOP 방송 시작 또는 재시작 시 연결에 최대 1분 가량 소요될 수 있습니다.
