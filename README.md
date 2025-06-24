@@ -126,9 +126,15 @@ public class DonationListener implements Listener {
 
 서버 플러그인과 클라이언트 모드는 모든 권리를 보유합니다.
 
-API, 문서 및 견본 코드는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+API, 문서 및 견본 코드는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE-API](LICENSE-API) 파일을 참조하세요.
 
 Javadoc 프로그램은 별도의 라이선스를 적용받습니다. 자세한 내용은 [docs/legal](docs/legal)을 참조하세요.
+
+> All rights reserved for server plugins and client mods.
+>
+> The API, documentation, and sample code are distributed under the MIT license. Refer to the [LICENSE-API](LICENSE-API) file for details.
+>
+> The Javadoc program is subject to a separate license. Refer to [docs/legal](docs/legal) for details.
 
 ## 법적 고지
 
