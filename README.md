@@ -140,5 +140,5 @@ SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.co.kr/?sz
 >
 > This project is not affiliated with, endorsed by, or sponsored by Bukkit, Mojang, Microsoft, SOOP, or CHZZK. All trademarks and copyrights are the property of their respective owners.
 
-> 이 프로젝트는 Bukkit, Mojang, Microsoft, SOOP 또는 CHZZK과 관련이 없으며, 이들로부터 승인받거나 후원받지
+이 프로젝트는 Bukkit, Mojang, Microsoft, SOOP 또는 CHZZK과 관련이 없으며, 이들로부터 승인받거나 후원받지
 않았습니다. 모든 상표권 및 저작권은 각 소유자의 재산입니다.
