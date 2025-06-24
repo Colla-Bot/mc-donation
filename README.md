@@ -124,9 +124,15 @@ public class DonationListener implements Listener {
 
 ## 라이선스
 
-API 및 견본 코드는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+서버 플러그인과 클라이언트 모드는 모든 권리를 보유합니다.
+
+API, 문서 및 견본 코드는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+
+Javadoc 프로그램은 별도의 라이선스를 적용받습니다. 자세한 내용은 [docs/legal](docs/legal)을 참조하세요.
 
 ## 법적 고지
+
+SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.co.kr/?szWork=support&sub=terms), 치지직 API는 [치지직 개발자 센터 이용약관](https://developers.chzzk.naver.com/termsDetail)의 적용을 받습니다.
 
 > This project contains references to the Bukkit API, which is licensed under the GNU General Public License (GPL). These references are included solely for compatibility purposes. It is our good-faith belief that such usage qualifies as fair use, as defined under applicable copyright law.
 >
