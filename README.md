@@ -1,6 +1,6 @@
 # mc-donation
 
-[![Discord](https://img.shields.io/discord/1283129121073008682?logo=discord)](https://discord.gg/B2PmZHUrUn)
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/B2PmZHUrUn)
 
 ## 주요 기능
 
