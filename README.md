@@ -33,7 +33,7 @@ limitPerTick: 5
 
 ## 연동
 
-### API
+### 1. API
 
 [![Maven Central Version](https://img.shields.io/maven-central/v/bot.colla/donation-api)](https://central.sonatype.com/artifact/bot.colla/donation-api) [![GitHub Release](https://img.shields.io/github/v/release/Colla-Bot/mc-donation)](https://github.com/Colla-Bot/mc-donation/releases/latest) [![Javadoc Status](https://img.shields.io/github/actions/workflow/status/Colla-Bot/mc-donation/pages/pages-build-deployment?label=Javadoc)](https://colla-bot.github.io/mc-donation/)
 
@@ -99,7 +99,7 @@ public class DonationListener implements Listener {
 > [!NOTE]  
 > 이벤트를 처리한 경우 취소하여야 아래 명령어가 호출되지 않습니다.
 
-### Skript
+### 2. Skript
 
 ```sk
 [on] (api|donation|balloon|cheese) [received]:
@@ -110,7 +110,7 @@ public class DonationListener implements Listener {
 > [!TIP]  
 > `event-integer`는 100원(별풍선 개수) 단위입니다.
 
-### 명령어 호출
+### 3. 명령어 호출
 
 위 이벤트가 취소되지 않았으면 `/api [플레이어] [유형] [액수] [닉네임]` 명령이 호출됩니다. 닉네임은 공백 또는 특수문자를 포함할 수 있습니다.
 
