@@ -12,7 +12,7 @@
 ## 지원 버전
 
 - Java 17+
-- **서버 플러그인:** Bukkit/Spigot API 1.13.1+, Paper API 1.21.5+
+- **서버 플러그인:** Bukkit/Spigot API 1.13.1+
 - **클라이언트 모드:** Fabric, Forge, NeoForge
 
 ## 플러그인 설정
@@ -60,6 +60,21 @@ compileOnly 'bot.colla:donation-api:2.0.1'
 >     }
 > }
 > ```
+
+#### 플러그인 의존성
+
+```yaml
+# plugin.yml
+depend: [donation]
+
+# paper-plugin.yml
+dependencies:
+  server:
+    donation:
+      load: BEFORE
+      required: true
+      join-classpath: true
+```
 
 #### 사용법
 
