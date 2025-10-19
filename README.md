@@ -122,7 +122,7 @@ public class DonationListener implements Listener {
 
 > [!TIP]  
 > - SOOP 방송 시작 또는 재시작 시 연결에 최대 1분 가량 소요될 수 있습니다.
-> - F3 디버그 화면에서 연결 상태를 확인할 수 있습니다.
+> - F3 디버그 화면에서 연결 상태를 확인할 수 있습니다. 1.21.9 이상에서는 F3+F6에서 `api_status` 또는 `donation:api_status` 항목을 활성화하여야 합니다.
 
 ## 후원 유형
 
