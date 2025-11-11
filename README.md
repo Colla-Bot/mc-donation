@@ -12,7 +12,7 @@
 ## 지원 버전
 
 - Java 17+
-- **서버 플러그인:** Bukkit/Spigot API 1.13.1+
+- **서버 플러그인:** Bukkit/Spigot API 1.13.1+, Folia 지원
 - **클라이언트 모드:** Fabric, Forge, NeoForge
 
 ## 플러그인 설정
