@@ -44,6 +44,7 @@ limitPerTick: 5
     <groupId>bot.colla</groupId>
     <artifactId>donation-api</artifactId>
     <version>2.0.1</version>
+    <scope>provided</scope>
 </dependency>
 ```
 
