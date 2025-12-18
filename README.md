@@ -132,7 +132,7 @@ public class DonationListener implements Listener {
 | 채팅 후원 | ✅ `BALLOON`, `ADBALLOON`[^1] | ✅ `CHEESE` |
 | 영상 후원 | ✅ `VIDEO_BALLOON` | ✅ `VIDEO_DONATION` |
 | 미션 후원 | ✅ `CHALLENGE_MISSION`[^2] | ❌ |
-| 대결미션 | ✅ `BATTLE_MISSION`[^3] | - |
+| 파티 후원 | ✅ `BATTLE_MISSION`[^3] | ❌ |
 
 [^1]: VOD 또는 방송국에 후원한 경우, 방송 입장 시 알림이 표시될 때 이벤트가 발생됩니다.
 [^2]: 미션 성공 시 이벤트가 발생되며, 개수가 5% 내 초과되어도 인정됩니다.
