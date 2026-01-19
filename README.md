@@ -147,13 +147,13 @@ public class DonationListener implements Listener {
 
 ## 라이선스
 
-서버 플러그인과 클라이언트 모드는 모든 권리를 보유합니다.
+서버 플러그인과 클라이언트 모드는 모든 권리를 보유합니다. 라이선스 관련 문의는 Discord를 통해 부탁드립니다.
 
 API, 문서 및 견본 코드는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE-API](LICENSE-API) 파일을 참조하세요.
 
 Javadoc 프로그램은 별도의 라이선스를 적용받습니다. 자세한 내용은 [docs/legal](docs/legal)을 참조하세요.
 
-> All rights reserved for server plugins and client mods.
+> All rights reserved for server plugins and client mods. For licensing inquiries, please contact us on Discord.
 >
 > The API, documentation, and sample code are distributed under the MIT license. Refer to the [LICENSE-API](LICENSE-API) file for details.
 >
@@ -161,7 +161,7 @@ Javadoc 프로그램은 별도의 라이선스를 적용받습니다. 자세한 
 
 ## 법적 고지
 
-SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.co.kr/?szWork=support&sub=terms), 치지직 API는 [치지직 개발자 센터 이용약관](https://developers.chzzk.naver.com/termsDetail)의 적용을 받습니다.
+[Minecraft 사용 지침](https://www.minecraft.net/ko-kr/usage-guidelines) 등 관련 규정을 준수하여야 하며, SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.co.kr/?szWork=support&sub=terms), 치지직 API는 [치지직 개발자 센터 이용약관](https://developers.chzzk.naver.com/termsDetail)의 적용을 받습니다.
 
 > This project contains references to the Bukkit API, which is licensed under the GNU General Public License (GPL). These references are included solely for compatibility purposes. It is our good-faith belief that such usage qualifies as fair use, as defined under applicable copyright law.
 >
