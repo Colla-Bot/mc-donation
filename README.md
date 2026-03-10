@@ -161,7 +161,7 @@ Javadoc 프로그램은 별도의 라이선스를 적용받습니다. 자세한 
 
 ## 법적 고지
 
-[Minecraft 사용 지침](https://www.minecraft.net/ko-kr/usage-guidelines) 등 관련 규정을 준수하여야 하며, SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.co.kr/?szWork=support&sub=terms), 치지직 API는 [치지직 개발자 센터 이용약관](https://developers.chzzk.naver.com/termsDetail)의 적용을 받습니다.
+[Minecraft 사용 지침](https://www.minecraft.net/ko-kr/usage-guidelines) 등 관련 규정을 준수하여야 하며, SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.com/?szWork=support&sub=terms), 치지직 API는 [치지직 개발자 센터 이용약관](https://developers.chzzk.naver.com/termsDetail)의 적용을 받습니다.
 
 > This project contains references to the Bukkit API, which is licensed under the GNU General Public License (GPL). These references are included solely for compatibility purposes. It is our good-faith belief that such usage qualifies as fair use, as defined under applicable copyright law.
 >
