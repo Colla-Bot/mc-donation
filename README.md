@@ -4,10 +4,10 @@
 
 ## 주요 기능
 
-* SOOP 및 치지직 공식 OpenAPI 연동
-* 도전미션, 대결미션, 영상 후원 지원
-* 클라이언트 사이드 처리로 서버 리소스 부담 및 개인정보 처리 최소화
-* Skript 및 명령어 호출 지원
+- SOOP, 치지직, 씨미 공식 OpenAPI 연동
+- 도전미션, 대결미션, 영상 후원 지원
+- 클라이언트 사이드 처리로 서버 리소스 부담 및 개인정보 처리 최소화
+- Skript 및 명령어 호출 지원
 
 ## 지원 버전
 
@@ -43,17 +43,18 @@ limitPerTick: 5
 <dependency>
     <groupId>bot.colla</groupId>
     <artifactId>donation-api</artifactId>
-    <version>2.0.1</version>
+    <version>3.0.0</version>
     <scope>provided</scope>
 </dependency>
 ```
 
 ```groovy
-compileOnly 'bot.colla:donation-api:2.0.1'
+compileOnly 'bot.colla:donation-api:3.0.0'
 ```
 
 > [!TIP]  
 > Capability 충돌이 발생할 경우, 다음과 같이 해결 전략을 지정하여야 할 수도 있습니다.
+>
 > ```groovy
 > configurations.configureEach {
 >     resolutionStrategy.capabilitiesResolution.withCapability("org.spigotmc:spigot-api") {
@@ -103,7 +104,7 @@ public class DonationListener implements Listener {
 ### 2. Skript
 
 ```sk
-[on] (api|donation|balloon|cheese) [received]:
+[on] (api|donation|balloon|cheese|beam) [received]:
   send "%event-text%님이 %event-donation type% %event-integer%개를 선물하였습니다!" to event-player
   cancel event
 ```
@@ -117,25 +118,28 @@ public class DonationListener implements Listener {
 
 ## 사용법
 
-- `/[숲/치지직] [로그인/로그아웃/시작/중지]`: 후원 연동 로그인, 로그아웃, 시작, 중지
-- `/[숲/치지직] 테스트 [유형] [닉네임] [액수]`: 테스트 이벤트 전송 (OP 권한 필요)
+- `/[숲/치지직/씨미] [로그인/로그아웃/시작/중지]`: 후원 연동 로그인, 로그아웃, 시작, 중지
+- `/[숲/치지직/씨미] 테스트 [유형] [닉네임] [액수]`: 테스트 이벤트 전송 (OP 권한 필요)
 - `/donation reload`: 플러그인 설정 리로드 (OP 또는 `donation.donation` 권한 필요)
 
-> [!TIP]  
+> [!TIP]
+>
 > - SOOP 방송 시작 또는 재시작 시 연결에 최대 1분 가량 소요될 수 있습니다.
 > - F3 디버그 화면에서 연결 상태를 확인할 수 있습니다. 1.21.9 이상에서는 F3+F6에서 `api_status` 또는 `donation:api_status` 항목을 활성화하여야 합니다.
 
 ## 후원 유형
 
-| 유형 | SOOP | 치지직 |
-| -- | ---- | --- |
-| 채팅 후원 | ✅ `BALLOON`, `ADBALLOON`[^1] | ✅ `CHEESE` |
-| 영상 후원 | ✅ `VIDEO_BALLOON` | ✅ `VIDEO_DONATION` |
-| 미션 후원 | ✅ `CHALLENGE_MISSION`[^2] | ❌ |
-| 파티 후원 | ✅ `BATTLE_MISSION`[^3] | ❌ |
+| 유형      | SOOP                          | 치지직              | 씨미            |
+| --------- | ----------------------------- | ------------------- | --------------- |
+| 채팅 후원 | ✅ `BALLOON`, `ADBALLOON`[^1] | ✅ `CHEESE`         | ✅ `BEAM`       |
+| 영상 후원 | ✅ `VIDEO_BALLOON`            | ✅ `VIDEO_DONATION` | ✅ `VIDEO_BEAM` |
+| 미션 후원 | ✅ `CHALLENGE_MISSION`[^2]    | ❌                  | ❌              |
+| 파티 후원 | ✅ `BATTLE_MISSION`[^3]       | ❌                  | ❌              |
 
 [^1]: VOD 또는 방송국에 후원한 경우, 방송 입장 시 알림이 표시될 때 이벤트가 발생됩니다.
+
 [^2]: 미션 성공 시 이벤트가 발생되며, 개수가 5% 내 초과되어도 인정됩니다.
+
 [^3]: 승리 여부에 관계 없이 후원 시 후원한 방송에 이벤트가 발생됩니다.
 
 ## 제한 및 금지 행위
@@ -161,13 +165,13 @@ Javadoc 프로그램은 별도의 라이선스를 적용받습니다. 자세한 
 
 ## 법적 고지
 
-[Minecraft 사용 지침](https://www.minecraft.net/ko-kr/usage-guidelines) 등 관련 규정을 준수하여야 하며, SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.com/?szWork=support&sub=terms), 치지직 API는 [치지직 개발자 센터 이용약관](https://developers.chzzk.naver.com/termsDetail)의 적용을 받습니다.
+[Minecraft 사용 지침](https://www.minecraft.net/ko-kr/usage-guidelines) 등 관련 규정을 준수하여야 하며, SOOP Open API는 [서비스 이용 정책](https://developers.sooplive.com/?szWork=support&sub=terms), 치지직 API는 [치지직 개발자 센터 이용약관](https://developers.chzzk.naver.com/termsDetail), 씨미 OpenAPI는 [씨미 개발자 센터 이용약관](https://docs.channel.io/cime/ko/articles/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%84%BC%ED%84%B0-%EC%9D%B4%EC%9A%A9%EC%95%BD%EA%B4%80-aa300e90)의 적용을 받습니다.
 
 > This project contains references to the Bukkit API, which is licensed under the GNU General Public License (GPL). These references are included solely for compatibility purposes. It is our good-faith belief that such usage qualifies as fair use, as defined under applicable copyright law.
 >
 > This project does not include or distribute the source code of the Bukkit API, nor does it incorporate any part of the original implementation. All references to the Bukkit API are strictly limited to publicly available interfaces, as necessary for interoperability and plugin development.
 >
-> This project is not affiliated with, endorsed by, or sponsored by Bukkit, Mojang, Microsoft, SOOP, or CHZZK. All trademarks and copyrights are the property of their respective owners.
+> This project is not affiliated with, endorsed by, or sponsored by Bukkit, Mojang, Microsoft, SOOP, CHZZK, or CIME. All trademarks and copyrights are the property of their respective owners.
 
-이 프로젝트는 Bukkit, Mojang, Microsoft, SOOP 또는 CHZZK과 관련이 없으며, 이들로부터 승인받거나 후원받지
-않았습니다. 모든 상표권 및 저작권은 각 소유자의 재산입니다.
+이 프로젝트는 Bukkit, Mojang, Microsoft, SOOP, CHZZK 또는 CIME와 관련이 없으며, 이들로부터 승인받거나
+후원받지 않았습니다. 모든 상표권 및 저작권은 각 소유자의 재산입니다.

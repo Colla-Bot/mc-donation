@@ -128,13 +128,17 @@ public class DonationEvent extends PlayerEvent implements Cancellable {
      */
     public enum Platform {
         /**
-         * <a href="https://www.sooplive.co.kr/">SOOP</a>
+         * <a href="https://www.sooplive.com/">SOOP</a>
          */
         SOOP("숲", "별풍선", 100),
         /**
          * <a href="https://chzzk.naver.com/">치지직</a>
          */
-        CHZZK("치지직", "치즈", 1);
+        CHZZK("치지직", "치즈", 1),
+        /**
+         * <a href="https://ci.me/">씨미</a>
+         */
+        CIME("씨미", "빔", 1);
 
         private final String name;
         private final String currency;
@@ -205,7 +209,15 @@ public class DonationEvent extends PlayerEvent implements Cancellable {
         /**
          * 치즈 영상 후원 (치지직)
          */
-        VIDEO_DONATION("영상 후원", Platform.CHZZK);
+        VIDEO_DONATION("영상 후원", Platform.CHZZK),
+        /**
+         * 빔 채팅 후원 (씨미)
+         */
+        BEAM("빔", Platform.CIME),
+        /**
+         * 치즈 영상 후원 (씨미)
+         */
+        VIDEO_BEAM("영상 후원", Platform.CIME);
 
         private final String name;
         private final Platform platform;
