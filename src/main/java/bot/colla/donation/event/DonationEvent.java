@@ -215,7 +215,7 @@ public class DonationEvent extends PlayerEvent implements Cancellable {
          */
         BEAM("빔", Platform.CIME),
         /**
-         * 치즈 영상 후원 (씨미)
+         * 빔 영상 후원 (씨미)
          */
         VIDEO_BEAM("영상 후원", Platform.CIME);
 
