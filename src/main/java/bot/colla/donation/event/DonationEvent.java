@@ -60,7 +60,8 @@ public class DonationEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * 후원한 후원 화폐(별풍선, 치즈) 개수를 가져옵니다.
+     * 후원한 후원 화폐(별풍선, 치즈, 캐시) 개수를 가져옵니다.
+     * 유튜브의 경우, 원화로 환산한 금액을 가져옵니다.
      *
      * @return 후원 개수
      */
@@ -69,29 +70,52 @@ public class DonationEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * 알림 테스트롤 통해 발생한 후원인지 반환합니다.
+     * 알림 테스트를 통해 발생한 후원인지 반환합니다.
+     * <p>
+     * 치지직과 투네이션(투네이션을 통해 받은 Super Chat 포함)의 알림 테스트만 구분할 수 있으며,
+     * 닉네임이 {@code TEST}인 후원을 테스트로 판단합니다. 투네이션의 알림 테스트는 닉네임이 {@code TEST}로 전달됩니다.
      *
      * @return 테스트 후원 여부
      */
     public boolean isTestDonation() {
-        return type.getPlatform() == Platform.CHZZK && "TEST".equals(nickname);
+        return "TEST".equals(nickname) && (type.getPlatform() == Platform.CHZZK
+                || type.getPlatform() == Platform.TOONATION
+                || type == Type.SUPER_CHAT);
     }
 
     /**
      * 문장 형태의 사용자 친화적인 문자열 표현을 반환합니다.
+     * SOOP 이외의 플랫폼은 후원 화폐를 단위로 사용하며, 천 단위 구분 기호는 서버의 로캘을 따릅니다.
      * <ul>
      *     <li>홍길동님으로부터 별풍선 33개를 후원</li>
      *     <li>도전미션 "탈출 성공"을/를 성공하여 별풍선 5개를 후원</li>
+     *     <li>홍길동님으로부터 10,000 치즈를 후원</li>
+     *     <li>홍길동님으로부터 영상 후원 10,000 치즈를 후원</li>
+     *     <li>홍길동님으로부터 슈퍼챗 5,000 원을 후원</li>
      * </ul>
      *
      * @return 사용자 친화적인 문자열 표현
      */
     public String getDisplayString() {
+        Platform platform = type.getPlatform();
         if (type == Type.CHALLENGE_MISSION) {
-            return "%s \"%s\"을/를 성공하여 %s %d개를 후원".formatted(
-                    type.getName(), nickname, type.getPlatform().getCurrency(), getCount());
+            return "%s \"%s\"을/를 성공하여 %s %,d개를 후원".formatted(
+                    type.getName(), nickname, platform.getCurrency(), getCount());
         }
-        return "%s님으로부터 %s %d개를 후원".formatted(nickname, type.getName(), getCount());
+        if (platform == Platform.SOOP) {
+            return "%s님으로부터 %s %,d개를 후원".formatted(nickname, type.getName(), getCount());
+        }
+        String currency = platform.getCurrency();
+        // 후원 유형의 이름이 후원 화폐와 같으면(치즈, 빔, 캐시) 반복하지 않습니다.
+        String kind = type.getName().equals(currency) ? "" : type.getName() + " ";
+        return "%s님으로부터 %s%,d %s%s 후원".formatted(
+                nickname, kind, getCount(), currency, hasFinalConsonant(currency) ? "을" : "를");
+    }
+
+    // 목적격 조사(을/를)를 고르기 위해 마지막 글자의 받침 유무를 확인합니다.
+    private static boolean hasFinalConsonant(String word) {
+        char last = word.charAt(word.length() - 1);
+        return last < 0xAC00 || last > 0xD7A3 || (last - 0xAC00) % 28 != 0;
     }
 
     @Override
@@ -138,7 +162,15 @@ public class DonationEvent extends PlayerEvent implements Cancellable {
         /**
          * <a href="https://ci.me/">씨미</a>
          */
-        CIME("씨미", "빔", 1);
+        CIME("씨미", "빔", 1),
+        /**
+         * <a href="https://www.youtube.com/">유튜브</a>
+         */
+        YOUTUBE("유튜브", "원", 1),
+        /**
+         * <a href="https://toon.at/">투네이션</a>
+         */
+        TOONATION("투네이션", "캐시", 1);
 
         private final String name;
         private final String currency;
@@ -217,7 +249,21 @@ public class DonationEvent extends PlayerEvent implements Cancellable {
         /**
          * 빔 영상 후원 (씨미)
          */
-        VIDEO_BEAM("영상 후원", Platform.CIME);
+        VIDEO_BEAM("영상 후원", Platform.CIME),
+        /**
+         * Super Chat 및 Super Sticker (유튜브, KRW/USD/JPY 결제만 받으며 1 USD = 100 JPY = 1,000원으로 환산)
+         * <p>
+         * 유튜브와 투네이션 중 어느 쪽에 로그인해도 받을 수 있으며,
+         * 둘 다 로그인한 경우 같은 Super Chat이 두 번 전달됩니다.
+         */
+        SUPER_CHAT("슈퍼챗", Platform.YOUTUBE),
+        /**
+         * 캐시 후원 (투네이션, 텍스트·음성·영상·룰렛 등 후원 유형에 관계없이 전달)
+         * <p>
+         * 럭키박스처럼 결과에 따라 환불될 수 있는 후원은 크리에이터가 받는 금액이 확정되었을 때 그 금액으로 전달되며,
+         * 퀘스트·플레이 후원은 전달되지 않습니다.
+         */
+        TOONATION_CASH("캐시", Platform.TOONATION);
 
         private final String name;
         private final Platform platform;
